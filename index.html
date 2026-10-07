@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RK Bakers | Fresh Bakery & Daily Essentials</title>
+    <meta
+      name="description"
+      content="RK Bakers in Ramjanki Nagar offers fresh bread, cakes, biscuits, groceries, dairy, and daily household essentials."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #fffaf3;
+        --white: #ffffff;
+        --text: #1d1d1f;
+        --muted: #666d76;
+        --primary: #c85b1e;
+        --primary-dark: #8b3b11;
+        --secondary: #f5c66b;
+        --green: #2d7d46;
+        --green-soft: #edf9f1;
+        --shadow: 0 18px 40px rgba(95, 52, 18, 0.12);
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+
+      img {
+        display: block;
+        width: 100%;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .container {
+        width: min(1180px, 92%);
+        margin: 0 auto;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        background: rgba(255, 250, 243, 0.9);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(200, 91, 30, 0.12);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 78px;
+        gap: 20px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+        font-size: 1.2rem;
+        letter-spacing: 0.03em;
+      }
+
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: var(--white);
+        display: grid;
+        place-items: center;
+        font-weight: 800;
+        box-shadow: var(--shadow);
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        gap: 26px;
+        font-size: 0.96rem;
+        color: var(--muted);
+      }
+
+      nav a:hover { color: var(--primary); }
+
+      .nav-btn {
+        background: var(--primary);
+        color: var(--white);
+        padding: 12px 22px;
+        border-radius: 999px;
+        font-weight: 700;
+        box-shadow: var(--shadow);
+      }
+
+      .hero {
+        background:
+          linear-gradient(rgba(29, 29, 31, 0.2), rgba(29, 29, 31, 0.38)),
+          url('https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+        min-height: 700px;
+        display: flex;
+        align-items: center;
+      }
+
+      .hero-inner {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 40px;
+        align-items: center;
+        padding: 90px 0;
+      }
+
+      .hero h1 {
+        margin: 0 0 18px;
+        color: var(--white);
+        font-size: clamp(2.8rem, 5vw, 5.2rem);
+        line-height: 1.05;
+        letter-spacing: -0.05em;
+      }
+
+      .hero p {
+        margin: 0 0 28px;
+        color: rgba(255,255,255,0.92);
+        line-height: 1.8;
+        font-size: 1.06rem;
+        max-width: 660px;
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        padding: 16px 26px;
+        font-weight: 700;
+        transition: transform 0.2s ease;
+      }
+
+      .btn:hover { transform: translateY(-2px); }
+
+      .btn-primary {
+        background: var(--primary);
+        color: var(--white);
+      }
+
+      .btn-secondary {
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.4);
+        color: var(--white);
+      }
+
+      .hero-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 28px;
+        margin-top: 32px;
+      }
+
+      .stat strong {
+        display: block;
+        color: var(--white);
+        font-size: 2rem;
+        font-weight: 800;
+      }
+
+      .stat span {
+        color: rgba(255,255,255,0.75);
+        font-size: 0.85rem;
+      }
+
+      .hero-card {
+        background: rgba(255,255,255,0.14);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.18);
+        box-shadow: var(--shadow);
+        border-radius: 26px;
+        padding: 28px 26px;
+        justify-self: end;
+        max-width: 420px;
+      }
+
+      .card-tag {
+        display: inline-block;
+        background: rgba(245,198,107,0.22);
+        color: #ffe7a7;
+        border-radius: 999px;
+        padding: 8px 14px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .hero-card h3 {
+        margin: 18px 0 14px;
+        color: var(--white);
+        font-size: clamp(1.8rem, 2vw, 2.5rem);
+      }
+
+      .hero-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 12px;
+      }
+
+      .hero-card li {
+        color: rgba(255,255,255,0.93);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 500;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--secondary);
+        box-shadow: 0 0 0 4px rgba(245, 198, 107, 0.12);
+      }
+
+      section {
+        padding: 96px 0;
+      }
+
+      .section-head {
+        text-align: center;
+        margin-bottom: 42px;
+      }
+
+      .section-head span {
+        display: inline-block;
+        color: var(--primary);
+        font-size: 0.8rem;
+        letter-spacing: 0.12em;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .section-head h2 {
+        margin: 12px 0 0;
+        font-size: clamp(2.1rem, 3vw, 3.2rem);
+        line-height: 1.15;
+      }
+
+      .about {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 42px;
+        align-items: center;
+      }
+
+      .about p {
+        margin: 0 0 18px;
+        color: var(--muted);
+        line-height: 1.9;
+        font-size: 1.02rem;
+      }
+
+      .about-boxes {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(140px, 1fr));
+        gap: 18px;
+        margin-top: 12px;
+      }
+
+      .info-box {
+        background: var(--white);
+        padding: 22px 18px;
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(200, 91, 30, 0.06);
+      }
+
+      .info-box strong {
+        display: block;
+        font-size: 1.8rem;
+        color: var(--primary);
+      }
+
+      .info-box span {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .about-image {
+        position: relative;
+        overflow: hidden;
+        min-height: 440px;
+        border-radius: 26px;
+        box-shadow: var(--shadow);
+      }
+
+      .about-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .float-badge {
+        position: absolute;
+        left: 20px;
+        bottom: 20px;
+        background: rgba(255,255,255,0.92);
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+        padding: 18px 20px;
+      }
+
+      .float-badge strong {
+        display: block;
+        color: var(--primary-dark);
+      }
+
+      .float-badge span {
+        color: var(--muted);
+        font-size: 0.8rem;
+      }
+
+      .categories {
+        background: #fff3e3;
+      }
+
+      .category-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 22px;
+      }
+
+      .category-card {
+        background: var(--white);
+        border-radius: 20px;
+        padding: 28px 18px 22px;
+        text-align: center;
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(200, 91, 30, 0.07);
+      }
+
+      .cat-icon {
+        width: 70px;
+        height: 70px;
+        margin: 0 auto 16px;
+        border-radius: 18px;
+        display: grid;
+        place-items: center;
+        font-size: 2rem;
+        background: linear-gradient(135deg, rgba(200, 91, 30, 0.12), rgba(245, 198, 107, 0.2));
+      }
+
+      .category-card h3 {
+        margin: 0 0 8px;
+        font-size: 1.15rem;
+      }
+
+      .category-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+        font-size: 0.9rem;
+      }
+
+      .products {
+        background: linear-gradient(180deg, #fffaf3 0%, #fff 100%);
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .product-item {
+        background: var(--white);
+        border-radius: 22px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(200, 91, 30, 0.06);
+      }
+
+      .product-image {
+        height: 190px;
+        overflow: hidden;
+      }
+
+      .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .product-content {
+        padding: 18px 18px 20px;
+      }
+
+      .tag {
+        display: inline-block;
+        background: #fff0e4;
+        color: var(--primary-dark);
+        font-size: 0.72rem;
+        font-weight: 700;
+        padding: 7px 10px;
+        border-radius: 999px;
+        margin-bottom: 12px;
+      }
+
+      .product-name {
+        margin: 0 0 8px;
+        font-size: 1.12rem;
+      }
+
+      .product-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 12px;
+      }
+
+      .price {
+        color: var(--primary-dark);
+        font-weight: 800;
+        font-size: 1.06rem;
+      }
+
+      .stock {
+        color: var(--muted);
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
+
+      .services {
+        background: #f0f9f3;
+      }
+
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+
+      .service-box {
+        background: var(--white);
+        border-radius: 22px;
+        padding: 28px 22px;
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(45, 125, 70, 0.07);
+      }
+
+      .service-icon {
+        width: 62px;
+        height: 62px;
+        border-radius: 16px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, rgba(45,125,70,0.12), rgba(200,91,30,0.12));
+        font-size: 1.7rem;
+        margin-bottom: 16px;
+      }
+
+      .service-box h3 {
+        margin: 0 0 10px;
+        font-size: 1.2rem;
+      }
+
+      .service-box p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .why-us {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .why-content p {
+        line-height: 1.9;
+        color: var(--muted);
+      }
+
+      .check-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 14px;
+      }
+
+      .check-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        font-weight: 600;
+      }
+
+      .check-list li::before {
+        content: "✓";
+        width: 26px;
+        height: 26px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: #eaf8f0;
+        color: var(--green);
+        flex-shrink: 0;
+      }
+
+      .why-image {
+        min-height: 440px;
+        overflow: hidden;
+        border-radius: 26px;
+        box-shadow: var(--shadow);
+      }
+
+      .why-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .gallery {
+        background: #fffaf1;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+      }
+
+      .gallery-item {
+        height: 220px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-item:hover img { transform: scale(1.08); }
+
+      .contact {
+        background: linear-gradient(135deg, #462210, #8a421f 52%, #c85b1e);
+        color: var(--white);
+      }
+
+      .contact-wrap {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 28px;
+        align-items: center;
+      }
+
+      .contact-box {
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.18);
+        border-radius: 22px;
+        padding: 28px;
+        backdrop-filter: blur(7px);
+      }
+
+      .contact-box h3 {
+        margin-top: 0;
+        margin-bottom: 18px;
+        font-size: 1.7rem;
+      }
+
+      .contact-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 16px;
+      }
+
+      .contact-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        color: rgba(255,255,255,0.9);
+      }
+
+      .contact-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        background: rgba(245,198,107,0.18);
+        color: #ffe9a6;
+        flex-shrink: 0;
+      }
+
+      footer {
+        background: #24160f;
+        color: rgba(255,255,255,0.78);
+        padding: 28px 0;
+      }
+
+      .footer-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 980px) {
+        .hero-inner,
+        .about,
+        .why-us,
+        .contact-wrap {
+          grid-template-columns: 1fr;
+        }
+
+        .category-grid { grid-template-columns: repeat(2, 1fr); }
+        .product-grid { grid-template-columns: repeat(2, 1fr); }
+        .service-grid { grid-template-columns: 1fr; }
+        .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+        .hero-card { justify-self: start; }
+      }
+
+      @media (max-width: 700px) {
+        nav { display: none; }
+        .category-grid,
+        .product-grid,
+        .gallery-grid,
+        .about-boxes {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          min-height: 590px;
+        }
+
+        .cta-row {
+          display: grid;
+          width: 100%;
+        }
+
+        .cta-row .btn {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="brand">
+          <div class="brand-mark">RK</div>
+          <span>RK Bakers</span>
+        </div>
+        <nav>
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#categories">Categories</a>
+          <a href="#products">Products</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+          <a href="#contact" class="nav-btn">Order Now</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="hero">
+        <div class="container hero-inner">
+          <div>
+            <h1>Fresh bakery delights & daily essentials.</h1>
+            <p>
+              Welcome to RK Bakers — your trusted neighborhood bakery and kirana shop
+              for breads, cakes, biscuits, snacks, grocery staples, dairy products,
+              and household needs. Fresh every day, served with love.
+            </p>
+
+            <div class="cta-row">
+              <a href="#products" class="btn btn-primary">Explore Products</a>
+              <a href="#contact" class="btn btn-secondary">Visit Our Shop</a>
+            </div>
+
+            <div class="hero-stats">
+              <div class="stat">
+                <strong>8+</strong>
+                <span>Years of Service</span>
+              </div>
+              <div class="stat">
+                <strong>5000+</strong>
+                <span>Happy Customers</span>
+              </div>
+              <div class="stat">
+                <strong>Daily</strong>
+                <span>Fresh Stock</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <div class="card-tag">Open Daily</div>
+            <h3>Everything under one roof</h3>
+            <ul>
+              <li><span class="dot"></span>Fresh bread, buns, cakes</li>
+              <li><span class="dot"></span>Biscuits, cookies, snacks</li>
+              <li><span class="dot"></span>Rice, flour, spices, pulses</li>
+              <li><span class="dot"></span>Milk, butter, eggs, dairy</li>
+              <li><span class="dot"></span>Soap, detergent, toiletries</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="container about">
+          <div>
+            <div class="section-head" style="text-align:left; margin-bottom:20px;">
+              <span>About Us</span>
+              <h2>Your neighborhood bakery & daily needs store.</h2>
+            </div>
+            <p>
+              RK Bakers started with a simple mission: to serve families with fresh bakery
+              goods and trustworthy grocery essentials. We believe in honest pricing, quality,
+              and a warm shopping experience for every customer.
+            </p>
+            <p>
+              From the first morning loaf to the evening tea snacks, we bring freshness and
+              convenience to your doorstep. Whether you need soft buns, special celebration cakes,
+              rice for dinner, or detergent for home, RK Bakers has it all.
+            </p>
+
+            <div class="about-boxes">
+              <div class="info-box">
+                <strong>100%</strong>
+                <span>Fresh Daily</span>
+              </div>
+              <div class="info-box">
+                <strong>24/7</strong>
+                <span>Call Support</span>
+              </div>
+              <div class="info-box">
+                <strong>Affordable</strong>
+                <span>Daily Pricing</span>
+              </div>
+              <div class="info-box">
+                <strong>Fast</strong>
+                <span>Home Delivery</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=1000&q=80" alt="RK Bakers bakery products" />
+            <div class="float-badge">
+              <strong>Freshly Baked</strong>
+              <span>Daily breads, cakes & buns</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="categories" id="categories">
+        <div class="container">
+          <div class="section-head">
+            <span>Shop Categories</span>
+            <h2>Everything you need for home & family</h2>
+          </div>
+
+          <div class="category-grid">
+            <div class="category-card">
+              <div class="cat-icon">🥖</div>
+              <h3>Breads & Buns</h3>
+              <p>Soft breads, pav, burger buns, and daily bakery essentials.</p>
+            </div>
+
+            <div class="category-card">
+              <div class="cat-icon">🎂</div>
+              <h3>Cakes & Pastries</h3>
+              <p>Birthday cakes, cream cakes, pastries, and celebration sweets.</p>
+            </div>
+
+            <div class="category-card">
+              <div class="cat-icon">🍪</div>
+              <h3>Biscuits & Cookies</h3>
+              <p>Tea-time biscuits, cream cookies, and family snacks.</p>
+            </div>
+
+            <div class="category-card">
+              <div class="cat-icon">🥐</div>
+              <h3>Bakery Favorites</h3>
+              <p>Puffs, khari, patties, rolls, and savory bakery treats.</p>
+            </div>
+
+            <div class="category-card">
+              <div class="cat-icon">🌾</div>
+              <h3>Grains & Pulses</h3>
+              <p>Rice, wheat flour, atta, pulses, and kitchen staples.</p>
+            </div>
+
+            <div class="category-card">
+              <div class="cat-icon">🧂</div>
+              <h3>Spices & Masalas</h3>
+              <p>Turmeric, chilli, garam masala, cumin, and daily spices.</p>
+            </div>
+
+            <div class="category-card">
+              <div class="cat-icon">🥛</div>
+              <h3>Dairy & Eggs</h3>
+              <p>Milk, curd, butter, paneer, cheese, and fresh eggs.</p>
+            </div>
+
+            <div class="category-card">
+              <div class="cat-icon">🧼</div>
+              <h3>Household Care</h3>
+              <p>Soap, detergent, cleaning items, toiletries, and more.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="products" id="products">
+        <div class="container">
+          <div class="section-head">
+            <span>Popular Items</span>
+            <h2>Fresh picks from RK Bakers</h2>
+          </div>
+
+          <div class="product-grid">
+            <div class="product-item">
+              <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80" alt="Bread" />
+              </div>
+              <div class="product-content">
+                <span class="tag">Best Seller</span>
+                <h3 class="product-name">Brown Bread</h3>
+                <div class="product-meta">
+                  <span class="price">₹ 40</span>
+                  <span class="stock">Fresh baked</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-item">
+              <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80" alt="Cake" />
+              </div>
+              <div class="product-content">
+                <span class="tag">Celebration</span>
+                <h3 class="product-name">Birthday Cake</h3>
+                <div class="product-meta">
+                  <span class="price">₹ 599+</span>
+                  <span class="stock">Custom order</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-item">
+              <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=800&q=80" alt="Biscuits" />
+              </div>
+              <div class="product-content">
+                <span class="tag">Tea Time</span>
+                <h3 class="product-name">Cream Biscuits</h3>
+                <div class="product-meta">
+                  <span class="price">₹ 70</span>
+                  <span class="stock">Crispy</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-item">
+              <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1599490659213-e2b9527bd087?auto=format&fit=crop&w=800&q=80" alt="Patties" />
+              </div>
+              <div class="product-content">
+                <span class="tag">Savory</span>
+                <h3 class="product-name">Veg Patties</h3>
+                <div class="product-meta">
+                  <span class="price">₹ 25</span>
+                  <span class="stock">Hot & fresh</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-item">
+              <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=800&q=80" alt="Rice" />
+              </div>
+              <div class="product-content">
+                <span class="tag">Daily Needs</span>
+                <h3 class="product-name">Basmati Rice</h3>
+                <div class="product-meta">
+                  <span class="price">₹ 55/kg</span>
+                  <span class="stock">Fresh stock</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-item">
+              <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80" alt="Spices" />
+              </div>
+              <div class="product-content">
+                <span class="tag">Kitchen</span>
+                <h3 class="product-name">Masala Pack</h3>
+                <div class="product-meta">
+                  <span class="price">₹ 90</span>
+                  <span class="stock">Aromatic</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-item">
+              <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=800&q=80" alt="Milk" />
+              </div>
+              <div class="product-content">
+                <span class="tag">Dairy</span>
+                <h3 class="product-name">Fresh Milk</h3>
+                <div class="product-meta">
+                  <span class="price">₹ 60/lit</span>
+                  <span class="stock">Farm fresh</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-item">
+              <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1528747045269-390fe33c19f2?auto=format&fit=crop&w=800&q=80" alt="Detergent" />
+              </div>
+              <div class="product-content">
+                <span class="tag">Home Care</span>
+                <h3 class="product-name">Detergent</h3>
+                <div class="product-meta">
+                  <span class="price">₹ 80+</span>
+                  <span class="stock">Trusted brands</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="services" id="services">
+        <div class="container">
+          <div class="section-head">
+            <span>Our Services</span>
+            <h2>Freshness, convenience & care</h2>
+          </div>
+
+          <div class="service-grid">
+            <div class="service-box">
+              <div class="service-icon">🚚</div>
+              <h3>Home Delivery</h3>
+              <p>Get your bakery items and daily essentials delivered to your home with speed and care.</p>
+            </div>
+
+            <div class="service-box">
+              <div class="service-icon">🎂</div>
+              <h3>Custom Cakes</h3>
+              <p>Order birthday and celebration cakes in different flavors, sizes, and designs.</p>
+            </div>
+
+            <div class="service-box">
+              <div class="service-icon">🛒</div>
+              <h3>One-Stop Shop</h3>
+              <p>From bakery to grocery, dairy to household essentials — everything is available here.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container why-us">
+          <div class="why-content">
+            <div class="section-head" style="text-align:left; margin-bottom:20px;">
+              <span>Why Choose Us</span>
+              <h2>Fresh bakery and everyday essentials.</h2>
+            </div>
+            <p>
+              At RK Bakers, we focus on quality, trust, and customer satisfaction. Every product is
+              carefully selected and freshened daily so families can rely on us for their daily needs.
+            </p>
+
+            <ul class="check-list">
+              <li>Freshly baked breads, buns, and pastries every morning</li>
+              <li>Daily groceries and pantry staples available under one roof</li>
+              <li>Affordable pricing with consistent quality</li>
+              <li>Friendly service and quick support for local families</li>
+              <li>Convenient home delivery for your busy routine</li>
+            </ul>
+          </div>
+
+          <div class="why-image">
+            <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=80" alt="Bakery kitchen" />
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery">
+        <div class="container">
+          <div class="section-head">
+            <span>Store Gallery</span>
+            <h2>A glimpse of RK Bakers</h2>
+          </div>
+
+          <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=800&q=80" alt="Bakery display" /></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80" alt="Bread" /></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80" alt="Cake" /></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1550583724-b2692b85b90f?auto=format&fit=crop&w=800&q=80" alt="Bakery items" /></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="container contact-wrap">
+          <div>
+            <div class="section-head" style="text-align:left; margin-bottom:18px;">
+              <span style="color:#ffd887;">Visit RK Bakers</span>
+              <h2 style="color:#fff;">Fresh buns, breads, snacks & daily essentials.</h2>
+            </div>
+            <p style="margin:0; color:rgba(255,255,255,0.8); line-height:1.8; max-width:620px;">
+              We are proud to serve our neighborhood with quality bakery products, grocery items,
+              and family essentials. Stop by today and enjoy fresh taste every day.
+            </p>
+          </div>
+
+          <div class="contact-box">
+            <h3>Contact & Location</h3>
+            <ul class="contact-list">
+              <li>
+                <span class="contact-icon">📍</span>
+                <span>Ramjanki Nagar</span>
+              </li>
+              <li>
+                <span class="contact-icon">📞</span>
+                <span>998789870</span>
+              </li>
+              <li>
+                <span class="contact-icon">✉️</span>
+                <span>contact@rkbakers.in</span>
+              </li>
+              <li>
+                <span class="contact-icon">🕒</span>
+                <span>Open Daily: 8:00 AM – 10:00 PM</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-wrap">
+        <div class="brand" style="color:#fff;">
+          <div class="brand-mark">RK</div>
+          <span>RK Bakers</span>
+        </div>
+        <div>© 2026 RK Bakers. All Rights Reserved.</div>
+      </div>
+    </footer>
+  </body>
+</html>
